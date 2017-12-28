@@ -12,15 +12,13 @@ class Room extends Component {
     return rooms.map(item => <option key={item._id} value={item._id}>{item.room}</option>)
   }
  
-  // handleSubmite = (e) => {
-  //   e.preventDefault();
-  //   const room = ReactDOM.findDOMNode(this.refs.textInput).value.trim(); 
-  //   Rooms.insert({
-  //     room,
-  //     createdAt: new Date(),
-  //   })
-  //   ReactDOM.findDOMNode(this.refs.textInput).value = '';
-  // }
+  handleSubmite = (e) => {
+    e.preventDefault();
+    const room = ReactDOM.findDOMNode(this.refs.textInput).value.trim(); 
+    Meteor.call('addRoom', room, () => {
+      ReactDOM.findDOMNode(this.refs.textInput).value = '';
+    });
+  }
 
   handleGetId = (e) => {
     this.props.onclick(e.target.value)
@@ -33,12 +31,12 @@ class Room extends Component {
   render() { 
     return (
       <div className='col-rooms'>
-        {/* <form onSubmit={this.handleSubmite}>
+        <form onSubmit={this.handleSubmite}>
           <input
             ref='textInput'
             placeholder='Enter city'
           />
-        </form> */}
+        </form>
         <select onChange={this.handleGetId}>
           <option value=''>...</option>
           {this.renderCitys()}
