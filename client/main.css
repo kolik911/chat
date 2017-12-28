@@ -1,0 +1,33 @@
+
+.col-rooms{
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+}
+.col-chat{
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  position: relative;
+}
+.chat-form{
+  /* position: absolute; */
+}
+
+.messages{
+  height: 300px;
+  overflow-y: hidden;  
+}
+.messages ul{
+  width: 100%;
+  list-style-type: none;
+  padding: 18px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages ul li{
+  padding: 10px 0;
+}
