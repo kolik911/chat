@@ -25,7 +25,7 @@ class Room extends Component {
   }
 
   componentDidMount() {
-      Meteor.subscribe('rooms')
+      Meteor.subscribe('rooms');
   }  
   
   render() { 
