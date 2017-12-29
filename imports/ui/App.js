@@ -32,6 +32,9 @@ class App extends Component {
     this.activeSubscription = Meteor.subscribe('messages', id)
   }
 
+  logOut = () => {
+    Meteor.logout();
+  }
 
   render() {
     return (
@@ -45,6 +48,7 @@ class App extends Component {
           </div>
           <ChatForm id={this.state.id} />
         </div>
+        <button onClick={this.logOut}>Log Out</button>
       </div>
     );
   }

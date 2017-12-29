@@ -4,10 +4,7 @@ import '../imports/api/methods/methods.js';
 import { Rooms } from '../imports/api/rooms';
 
 Meteor.startup(() => {
-  // if (Meteor.subscribe('allRooms')){
-  //   return false;
-  // }
-  // console.log(Meteor.subscribe('allRooms'));
+  
   if (Rooms.find().count() === 0) {
     Meteor.call('addRoom', 'Sambir');
     Meteor.call('addRoom', 'Kyiv');
