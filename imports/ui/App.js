@@ -48,7 +48,7 @@ class App extends Component {
           </div>
           <ChatForm id={this.state.id} />
         </div>
-        <button onClick={this.logOut}>Log Out</button>
+        <button onClick={this.logOut}>LogOut</button>
       </div>
     );
   }
